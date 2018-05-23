@@ -25,8 +25,8 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:id="@+id/banner_slider1"
-              app:slider_interval="10000"
-              app:slider_defaultBanner="1"
+              app:slider_interval="3000"
+              app:slider_defaultBanner="2"
               app:slider_emptyView="@layout/layout_empty_view"
              app:slider_indicatorSize="12dp">
 

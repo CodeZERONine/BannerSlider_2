@@ -1,26 +1,43 @@
 package org.akshanshgusain.imageslider1;
 
+import java.util.ArrayList;
+
 import ss.com.bannerslider.adapters.SliderAdapter;
 import ss.com.bannerslider.viewholder.ImageSlideViewHolder;
 
 public class MainSliderAdapter extends SliderAdapter {
+   private ArrayList<String> mUrls;
+
+    //Constructor as Setter
+    public MainSliderAdapter(ArrayList<String> mUrls) {
+        this.mUrls=mUrls;
+    }
+
     @Override
     public int getItemCount() {
-        return 3;
+        return mUrls.size();
     }
 
     @Override
     public void onBindImageSlide(int position, ImageSlideViewHolder viewHolder) {
-        switch (position) {
+       // viewHolder.bindImageSlide(mUrls.get(position));
+      switch (position) {
             case 0:
-                viewHolder.bindImageSlide("https://assets.materialup.com/uploads/dcc07ea4-845a-463b-b5f0-4696574da5ed/preview.jpg");
+                viewHolder.bindImageSlide(mUrls.get(0));
                 break;
             case 1:
-                viewHolder.bindImageSlide("https://assets.materialup.com/uploads/20ded50d-cc85-4e72-9ce3-452671cf7a6d/preview.jpg");
+                viewHolder.bindImageSlide(mUrls.get(1));
                 break;
             case 2:
-                viewHolder.bindImageSlide("https://assets.materialup.com/uploads/76d63bbc-54a1-450a-a462-d90056be881b/preview.png");
+                viewHolder.bindImageSlide(mUrls.get(2));
                 break;
+          case 3:viewHolder.bindImageSlide(mUrls.get(3));
+             break;
         }
+
+      /*for(int i=0;i<2;i++){
+           viewHolder.bindImageSlide(mUrls.get(position));
+      }*/
+
     }
 }
